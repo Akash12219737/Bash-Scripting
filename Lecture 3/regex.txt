@@ -1,0 +1,70 @@
+1. What is Regex?
+
+Regex (Regular Expression) is a sequence of characters that defines a pattern.
+It’s mainly used to match, search, validate, or replace strings.
+
+Think of regex as a rule that decides if text fits or not.
+xample in your Code
+read -rp "Enter Something: " data
+
+if [[ $data =~ ^[0-9]+$ ]]; then 
+    echo "It's an integer number"
+else
+    echo "Not an integer number"
+fi
+
+
+Here:
+
+[[ $data =~ ^[0-9]+$ ]] → checks if the input matches the regex pattern.
+
+read → used to take input from the user.
+
+-r → tells read not to interpret backslashes (\) as escape characters. Example: \n will stay as \n instead of newline.
+
+-p "Enter Something: " → shows the message before input (prompt).
+=~ → means "matches the regex".
+
+3. Breaking Down the Regex: ^[0-9]+$
+
+^ → start of string
+
+[0-9] → any digit from 0 to 9
+
++ → one or more times
+
+$ → end of string
+
+So together:
+👉 ^[0-9]+$ means "a string that contains only digits (at least one), nothing else"
+-----------------------------------------------------------------------------------------------
+
+
+Regex: Regular Expression
+used to define Patterns for data validation.
+
+^[0-9]+$
+^ : starts with
+[0-9] : shows all digits from 0-9
++ : indicates 1 or more
+$ : indicates end of the Expression
+
+
+Email Pattern::
+^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$
+
+^ Match Beginning, $ match end of String
+
+^[A-Za-z0-9._%+-] = username can be a combination of
+letters, numbers, _, %, -, +
+
++ = means more than one letters and symbols can be used for username
+
+@ = must contain @
+
+[A-Za-z0-9.-] = domain part (letters, numbers, ., -)
+
+\. = must contain . after domain
+
+[A-Za-z]{2,4}$ = top level domain with min 2 and max 4 letters
+(com, org, in etc..)
