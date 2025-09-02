@@ -1,0 +1,1 @@
+Let's say we want to generate zip of every file inside a folder separatly then we can use the script
